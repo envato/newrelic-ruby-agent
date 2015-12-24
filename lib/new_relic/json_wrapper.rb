@@ -20,7 +20,7 @@ module NewRelic
           options = ::JSON.dump_default_options
         else
           # These were the defaults from json 1.1.9 up to 1.6.1
-          options = { :allow_nan => true, :max_nesting => false }
+          options = { :allow_nan => true }
         end
         @dump_method = Proc.new do |obj|
           generate_method.call(obj, options)
